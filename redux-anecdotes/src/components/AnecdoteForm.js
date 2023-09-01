@@ -1,12 +1,10 @@
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { createAnecdote } from '../reducers/anecdoteReducer'
 
 const AnecdoteForm = () => {
 
-  const anecdotes = useSelector(state => state)
   const dispatch = useDispatch()
 
-  anecdotes.sort((a, b) => b.votes - a.votes)
   const addAnecdote = (event) => {
     event.preventDefault()
     const content = event.target.anecdote.value
